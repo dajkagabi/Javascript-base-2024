@@ -5,12 +5,12 @@ function greet (name) {
 greet('Gabriella');
 
 //
-function greet2 (string, lastSring){
+function greeting (string, lastSring){
     console.log('' + string + ' ' + lastSring);
 }
 
-greet2('Good morning', 'Everybody');
-greet2('God morgen', 'Everybody');
+greeting('Good morning', 'Everybody');
+greeting('God morgen', 'Everybody');
 
 //calculate
 function calculate (number){
