@@ -4,6 +4,9 @@ let lastName = "Dajka";
 
 //Number
 let age = 23;
+let price = 550;
+console.log('Price is: ' +  price);
+
 
 //var
 var welcome = "Hello Javascript";
