@@ -26,12 +26,6 @@ for  (i=0; i<10; i++) {
     console.log("Hello World!", i);
 }
 
-let count = 0;
-while (count < 5) {
-    console.log("Count: ", count);
-    count++;
-}
-
 let car = ["Volvo", "Suzuki", "Honda", "Opel",]
 for (i=0; i< car.length; i++) {
     console.log("Car: ", i);
