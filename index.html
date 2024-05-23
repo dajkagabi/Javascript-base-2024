@@ -7,9 +7,140 @@
   </head>
 
   <body>
-    <h1>Hello Javascript-base</h1>
+    <h1 id="cim">Hello Javascript-base</h1>
 
-    <script src="scripts.js"></script>
-    <script src="variable.js"></script>
+    <p class="szoveg">
+      Enim labore commodo irure est cillum ad deserunt aute cupidatat deserunt
+      mollit incididunt nisi.
+    </p>
+
+    <ul>
+      <li>Hello</li>
+      <li>Hello</li>
+    </ul>
+
+    <div class="container">
+      <p class="szoveg2">
+        Enim exercitation sit exercitation consectetur incididunt.
+      </p>
+    </div>
+
+    <div class="Container">
+      <p class="bekezdes">
+        Ut commodo eiusmod anim commodo eu voluptate dolore. In nulla mollit
+        laboris elit labore amet sunt id ipsum cupidatat velit in excepteur
+        culpa.
+      </p>
+    </div>
+
+    <p id="element">
+      Laboris labore eiusmod elit ad deserunt est proident exercitation eiusmod
+      proident anim voluptate.
+    </p>
+
+    <ul id="lista">
+      <li>Elem</li>
+      <li>Hello</li>
+      <li>Szia</li>
+      <li>Hi</li>
+    </ul>
+
+    <div id="container" data-info="adat1">Eredeti szöveg</div>
+
+    <button id="gomb">Kattints rám!</button>
+
+    <div id="doboz" class="alap">Ez egy doboz</div>
+    <button id="toogle">Toggle</button>
+    <button id="clone">Clone</button>
+
+    <script>
+      //getElementById
+      const cimElem = document.getElementById("cim");
+      cimElem.style.color = "green";
+      //getElementsByClassName
+      const szoveg = document.getElementsByClassName("szoveg");
+      for (let i = 0; i < szoveg.length; i++) {
+        szoveg[i].style.fontWeight = "bold";
+      }
+      //getElementByTagName
+      const liElem = document.getElementsByTagName("li");
+      for (let i = 0; i < liElem.length; i++) {
+        liElem[i].style.color = "blue";
+      }
+      //querySelector
+      const masodikSzoveg = document.querySelector(".container, .szoveg2");
+      masodikSzoveg.style.fontSize = "18px";
+      //querySelectorAll
+      const bekezdes = document.querySelectorAll(".bekezdes");
+      bekezdes.forEach((elem) => {
+        elem.style.textDecoration = "underline";
+      });
+      //createElement, appendChild
+      const element = document.getElementById("element");
+      const UjElem = document.createElement("p");
+      UjElem.textContent = "Ez egy új bekezdés.";
+      element.appendChild(UjElem);
+      //removeChild
+      const lista = document.getElementById("lista");
+      const elsoElem = lista.getElementsByTagName("li")[0];
+      lista.removeChild(elsoElem);
+      //dataset
+      const container = document.getElementById("container");
+      container.dataset.info = "ujAdat";
+      console.log(container.dataset.info);
+      //eventListener, remove
+      function kattintasHandler() {
+        alert("Gomb megnyomva!");
+      }
+      const gomb = document.getElementById("gomb");
+      gomb.addEventListener("click", kattintasHandler);
+      console.log("Eseménykezelő hozzáadva.");
+
+      setTimeout(() => {
+        gomb.removeEventListener("click", kattintasHandler);
+        console.log("Eseménykezelő eltávolítva.");
+      }, 5000);
+      //call
+      const doboz = document.getElementById("doboz");
+      const toogle = document.getElementById("toogle");
+      const clone = document.getElementById("clone");
+
+      toogle.addEventListener("click", function () {
+        doboz.classList.toggle("kiemelt");
+      });
+
+      //eventLister
+
+      /* if (!masolat) {
+       const ujMasolat = doboz.cloneNode(true);
+       ujMasolat.textContent = "Ez egy klónozott doboz";
+        ujMasolat.classList.add("kiemelt", "klon");
+        document.body.appendChild(ujMasolat);
+
+         ujMasolat.addEventListener("click", function () {
+         ujMasolat.classList.toggle("kiemelt");
+          });
+        }
+        });
+      */
+
+      clone.addEventListener("click", function () {
+        const masolat = doboz.cloneNode(true);
+        masolat.textContent = "Ez egy klónozott doboz";
+        masolat.classList.add("kiemelt");
+        document.body.appendChild(masolat);
+
+        masolat.addEventListener("click", function () {
+          masolat.classList.toggle("kiemelt");
+        });
+      });
+    </script>
+    <style>
+      .kiemelt {
+        background-color: beige;
+      }
+    </style>
+    <!--  <script src="scripts.js"></script>
+    <script src="variable.js"></script>-->
   </body>
 </html>
