@@ -11,6 +11,7 @@ console.log('Price is: ' +  price);
 //var
 var welcome = "Hello Javascript";
 console.log(welcome);
+
 //const
 const PI = 3.14159; 
 console.log(PI);
@@ -24,10 +25,8 @@ let age1 = 21;
 console.log("Név: " + Name1 + " " + Name2 + ", életkor: " + age1);
 
 //Boolen
-/*const login= true;
-const logout = false;
-console.log(logout, logged_in); */
-
+let online = true;
+console.log("Online: " + online);
 
 //Null
 let number = null;
@@ -42,6 +41,13 @@ console.log(score);
 const car = ['OPEL', 'SKODA', 'HYUNDAI', 'VOLVO',]
 console.log(car);
 
+//MAP
+const car2 = ["JEEP", "TESLA", "HONDA", "LEXUS", "MAZDA", "SUZUKI", "TOYOTA"];
+const carList = car2.map (brand => `Brand: ${brand}`);
+console.log(carList);
+
+
+
 //PUSH
 car.push("NISSAN", "SEAT");
 console.log(car);
@@ -54,3 +60,13 @@ console.log(car);
 car.length;
 console.log(car);
 
+//DATE
+const date = new Date();
+const year = date.getFullYear();
+const month = date.getMonth() + 1; 
+const day = date.getDate();
+const hours = date.getHours();
+const minutes = date.getMinutes();
+const seconds = date.getSeconds();
+
+console.log(`A jelenlegi dátum és idő: ${year}-${month}-${day} ${hours}:${minutes}:${seconds}`);
